@@ -16,13 +16,20 @@ export default function Navbar({ pokemonFilter }) {
     />
   );
 
-  const navbarStyle = {
+  const megamenuStyle = {
+    background: "#071426",
     marginBottom: "3rem",
+    borderRadius: "0",
   };
 
   return (
-    <div style={navbarStyle}>
-      <MegaMenu orientation="horizontal" start={start} end={end} />
+    <div>
+      <MegaMenu
+        orientation="horizontal"
+        start={start}
+        end={end}
+        style={megamenuStyle}
+      />
     </div>
   );
 }

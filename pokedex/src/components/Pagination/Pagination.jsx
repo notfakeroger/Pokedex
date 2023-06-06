@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paginator } from 'primereact/paginator';
+import { Paginator } from "primereact/paginator";
 
 const Pagination = ({ totalItems, itemsPerPage, onPageChange }) => {
   const [first, setFirst] = useState(0);
@@ -15,7 +15,10 @@ const Pagination = ({ totalItems, itemsPerPage, onPageChange }) => {
       rows={itemsPerPage}
       totalRecords={totalItems}
       onPageChange={onPageChangeHandler}
-      template={{ layout: 'PrevPageLink CurrentPageReport NextPageLink' }}
+      template={{
+        layout:
+          "FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink",
+      }}
     />
   );
 };

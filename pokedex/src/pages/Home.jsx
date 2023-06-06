@@ -26,7 +26,7 @@ const Home = () => {
 
   const getPokemon = () => {
     let endpoints = [];
-    for (let i = 1; i < 650; i++) {
+    for (let i = 1; i < 649; i++) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
 
@@ -93,18 +93,16 @@ const Home = () => {
     <div>
       <Navbar pokemonFilter={pokemonFilter} />
       <div style={cardsContainerStyle}>
-        {isLoading ? (
-          renderSkeletons()
-        ) : (
-          pokemons.map((pokemon, key) => (
-            <PokemonCard
-              key={key}
-              name={pokemon.name}
-              image={pokemon.sprites.front_default}
-              types={pokemon.types}
-            />
-          ))
-        )}
+        {isLoading
+          ? renderSkeletons()
+          : pokemons.map((pokemon, key) => (
+              <PokemonCard
+                key={key}
+                name={pokemon.name}
+                image={pokemon.sprites.front_default}
+                types={pokemon.types}
+              />
+            ))}
       </div>
       <Pagination
         totalItems={filteredPokemons.length}
